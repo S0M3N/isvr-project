@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block title %}ISVR | Contact{% endblock %}
+{% block c_active %}active{% endblock %}
+{% block main %}
+
+<style>
+    .bg-contact {
+        background: linear-gradient(to right, #a517ba, #5f1782);
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong>{{message}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+
+<section id="contact">
+    <div class="container mt-4">
+        <h2 class="display-6 text-center">
+            How can we <span class="text-primary-color">HELP</span> you? 
+        </h2>
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 rounded bg-contact">
+                <h1 class="text-center text-light my-4">
+                    Lets get in touch.
+                </h1>
+                <p class="my-4 mx-2 text-light">
+                    Let us know about your doubts. One of our expert will contect to you soon. You can also write to our
+                    mail or to one of our address. We will respond as soon as possible.
+                </p>
+                <div class="mx-3">
+                    <p class="font-weight-light text-light">
+                        <i class="fa-solid fa-location-dot"></i> ISVR Research Lab, RCE, Roorkee, Uttarakhand 247667
+                    </p>
+                    <p class="font-weight-light text-light">
+                        <i class="fa-solid fa-location-dot"></i> ISVR, Jubilee Market, Laxmi Bazar, Dhenkanal 759001
+                    </p>
+                    <p class="font-weight-light text-light">
+                        <i class="fa-solid fa-phone"></i> +91 88820 54894 / +91 98610 55575
+                    </p>
+                    <p class="text-light">
+                        <i class="fa-solid fa-envelope"></i> <a href="mailto:info@isvr.org.in"
+                            class="text-light">info@isvr.org.in</a>
+                    </p>
+                </div>
+                <p class="mx-2 mt-5 text-light">Connect on Social Media</p>
+                <div class="social-icons my-3">
+                    <a href="https://www.facebook.com/isvr01/" target="_blank" class="text-light "><i
+                            class="fa-brands fa-lg fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/i_s_v_r_/" target="_blank" class="text-light "><i
+                            class="fa-brands fa-lg fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/indian-space-vault-and-research/" target="_blank"
+                        class="text-light "><i class="fa-brands fa-lg fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6 bg-light rounded">
+                <h2 class="my-4 mx-3">Contact Us</h2>
+                <form action="/contact" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" id="fname" name="fname"
+                                    placeholder="First name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                            placeholder="Enter a valid email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="contact" name="contact" aria-describedby="emailHelp"
+                            placeholder="Enter contact number">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="subject" name="subject" aria-describedby="emailHelp"
+                            placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" name="message" rows="3"
+                            placeholder="YOUR MESSAGE HERE"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn bg-primary-color text-light mb-2">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

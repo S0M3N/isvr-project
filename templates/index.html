@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% block title %}ISVR | Home{% endblock title %}
+{% block h_active %}active{% endblock %}
+{% block main %}
+{% load static %}
+<section id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="promo-title">We build the <br>Future!</p>
+                <p>Curiosity is the essence of our existence. Reach us for the Rocketry, Drone Technology, and
+                    research in Space Field.</p>
+                <a href="https://isvr-cert.herokuapp.com/#contact"
+                    class="btn my-4 px-4 py-2 rounded-pill text-white bg-primary-color">Contact Us</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{% static '/images/bannerimg.png' %}" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about">
+    <div class="container my-5">
+        <div class="text-center mb-5 col-md-10 mx-auto">
+            <h1 class="font-weight-bold display-6">Who We <span class="text-primary-color">Are</span>?</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 my-4">
+                <img class="image-100" src="{% static '/images/earth.jpg' %}" alt="">
+            </div>
+            <div class="col-md-6 my-4">
+                <h3 class="font-weightabout-600 display-6 text-center">ISVR since <span
+                        class="text-primary-color">2016.</span></h3>
+                <h4 class="display-6 text-center mb-4"><span class="text-primary-color">5+ Years</span> of
+                    Industrial Experience.
+                </h4>
+                <p class="my-3 mx-3">We have knowledge in the space area, and we have been working in
+                    this field solely to raise the students' awareness and motivation to reach and explore the
+                    infinite sky with no boundaries since our inception. We set lofty goals, work hard, and overcome
+                    obstacles to obtain the best results.</p>
+                <p class="font-weight-light my-4 mx-3">We have an unrivalled track record when it comes to rocket
+                    launches. ISVR Learning
+                    Labs have been designed and effectively implemented.</p>
+                <a href="/about" class="btn my-4 px-4 py-2 rounded-pill text-white bg-primary-color">Know
+                    More</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="services">
+    <div class="container my-5">
+        <div class="text-center mb-5 col-md-10 mx-auto">
+            <h2 class="font-weight-bold display-4">Our <span class="text-primary-color">Services</span></h2>
+            <p class="mx-auto">High Performance curriculum For Multiple Space Fields</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 my-4">
+                <a href="#" class="text-dark">
+                    <div class="px-3 py-5">
+                        <span class="text-uppercase">Services</span>
+                        <h3 class="text-capitalize my-2 font-width-600">We works today for the Future.</h3>
+                        <a href="/services" class="btn my-4 px-4 py-2 rounded-pill text-white bg-primary-color">See
+                            More</a>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 my-4">
+                <a href="#" class="text-dark">
+                    <div class="px-3 py-5 bg-light rounded">
+                        <div class="text-center">
+                            <i class="fa-solid fa-rocket fa-3x md-3"></i>
+                        </div>
+                        <div class="px-3 text-center pb-3">
+                            <h5 class="text-uppercase font-weight-600">Rocketry</h5>
+                            <p class="font-weight-light my-3">This course covers the fundamentals of rockets as well
+                                as contemporary advancements in rocket propulsion, solid, liquid, electrical,
+                                nuclear fuels and rockets</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 my-4">
+                <a href="#" class="text-dark">
+                    <div class="px-3 py-5 bg-primary-color text-white rounded">
+                        <div class="text-center">
+                            <i class="fa-solid fa-satellite fa-3x md-3"></i>
+                        </div>
+                        <div class="px-3 text-center pb-3">
+                            <h5 class="text-uppercase font-weight-600">Cube Satellite</h5>
+                            <p class="font-weight-light my-3">Take a look at a demo of our Satellite Designing
+                                course. Allow one of our knowledgeable mentors to lead you through the course.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container my-5">
+        <div class="text-center col-md-10 mx-auto">
+            <h1 class="text-uppercase font-weight-600 display-5">Ask for a <span
+                    class="text-primary-color">Callback</span></h1>
+            <p class="font-weight-light">Want to connect to our <span class="text-primary-color">Experts</span>,</p>
+        </div>
+        <div class="text-center">
+            <a href="/contact"
+                class="btn my-4 px-4 py-2 rounded-pill text-white bg-primary-color">Contact
+                Us</a>
+            <p class="font-weight-light">Our <span class="text-primary-color">Experts</span> will connect to you as
+                soon as possible</p>
+        </div>
+    </div>
+</section>
+<section id="socials" class="py-4">
+    <div class="container my-5">
+        <div class="text-center mb-5 col-md-10 mx-auto">
+            <h2 class="text-uppercase font-weight-bold display-5">Find us on <span
+                    class="text-primary-color">Social</span> Media</h2>
+        </div>
+        <div class="social-icons text-center">
+            <a href="https://www.facebook.com/isvr01/" target="_blank" class="text-dark "><i
+                    class="fa-brands fa-lg fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/i_s_v_r_/" target="_blank" class="text-dark "><i
+                    class="fa-brands fa-lg fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/indian-space-vault-and-research/" target="_blank"
+                class="text-dark "><i class="fa-brands fa-lg fa-linkedin"></i></a>
+        </div>
+    </div>
+</section>
+{% endblock main %}

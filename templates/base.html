@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+        :root {
+            --primary-color: #a517ba;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .dark-mode {
+            transition: 0.5s ease-in;
+            background: #000;
+            color: #fff;
+        }
+
+        body {
+            font-family: sans-serif;
+            font-family: "Poppins", sans-serif !important;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .font-weight-600 {
+            font-weight: 600;
+        }
+
+        .bg-primary-color {
+            background-color: var(--primary-color);
+        }
+
+        .text-primary-color {
+            color: var(--primary-color);
+        }
+
+        .image-100 {
+            width: 100%;
+            border: none;
+            border-radius: 1.5rem;
+            transition: .3s transform ease-in-out;
+        }
+
+        .image-100:hover {
+            transform: scale(1.05);
+        }
+
+        #nav-bar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar {
+            background-image: linear-gradient(to right, #a517ba, #5f1782);
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            padding-left: 20px;
+        }
+
+        navbar-nav li {
+            padding: 0 10px;
+        }
+
+        #banner {
+            background-image: linear-gradient(to right, #a517ba, #5f1782);
+            color: #fff;
+            padding-top: 5%;
+        }
+
+        .promo-title {
+            font-size: 40px;
+            font-weight: 600;
+            margin-top: 100px;
+        }
+
+        .cntc-btn {
+            margin: 20px;
+        }
+
+        #banner a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #service {
+            padding: 80px 0;
+        }
+
+        .service-img {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 40%;
+        }
+
+        .services {
+            padding: 20px;
+        }
+
+        .h-title {
+            padding: 5px;
+            margin-top: 25px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .title::before {
+            content: "";
+            background: #7b1798;
+            height: 5px;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            transform: translateY(63px);
+        }
+
+        .title::after {
+            content: "";
+            background: #7b1798;
+            height: 5px;
+            width: 60px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            margin-bottom: 90px;
+            transform: translateY(11px);
+        }
+
+        .social-icons a {
+            margin-left: 50px;
+        }
+
+        .social-icons i {
+            transition: 0.5s;
+        }
+
+        .social-icons a:hover i {
+            transform: translateY(-10px);
+        }
+
+
+        #footer {
+            background-image: linear-gradient(to right, #a517ba, #5f1782);
+            color: #fff;
+        }
+
+        .footer-box {
+            padding: 20px;
+        }
+
+        .footer-box img {
+            width: 60px;
+            margin-bottom: 20px;
+        }
+
+        .footer-box .fa-solid {
+            margin-right: 8px;
+            font-size: 25px;
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            padding-top: 7px;
+            border-radius: 8px;
+            background-image: linear-gradient(to right, #a517ba, #5f1782);
+        }
+
+        .gototop {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            bottom: 20px;
+            right: 20px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            font-variant-east-asian: 22px;
+            border: 0;
+            border-radius: 10px;
+            transition: transform .3s ease-in-out;
+        }
+
+        .gototop:hover {
+            color: #fff;
+            transform: scale(1.25);
+        }
+
+        /* -------- About Page -------- */
+        .main {
+            min-height: 80vh;
+        }
+
+        .team .member {
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 5px;
+            width: 280px;
+            background-color: #fff;
+        }
+
+        .team .member .member-img {
+            position: relative;
+            overflow: hidden;
+            min-height: 310px;
+            max-height: 310px;
+        }
+
+        .team .member .social {
+            position: absolute;
+            left: 0;
+            bottom: 30px;
+            right: 0;
+            opacity: 0;
+            transition: ease-in-out .3s;
+            text-align: center;
+        }
+
+        .team .member:hover .social {
+            opacity: 1;
+            bottom: 15px;
+        }
+
+        .team .member .social a {
+            transition: color 0.3s;
+            color: #111111;
+            margin: 0 3px;
+            padding-top: 7px;
+            border-radius: 50px;
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-color);
+            display: inline-block;
+            transition: ease-in-out 0.3s;
+            columns: #fff;
+        }
+
+        .team .member .social a:hover {
+            background-color: #111;
+        }
+
+        .team .member .member-info {
+            padding: 25px 15px;
+        }
+
+        .team .member .member-info h4 {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 18px;
+            color: #111;
+        }
+
+        .team .member .member-info span {
+            display: block;
+            font-size: 13px;
+            font-weight: 400;
+            color: #aaa;
+        }
+
+        #team {
+            padding: 60px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .section-bg {
+            padding: 120px;
+            color: #fff;
+        }
+
+        .section-bg::before {
+            content: "";
+            background: #1b1b1b;
+            position: absolute;
+            bottom: 60px;
+            top: 60px;
+            left: 0;
+            right: 0;
+            transform: skewY(-2deg);
+        }
+
+        /* -------- Services -------- */
+
+        section-head {
+            margin-bottom: 60px;
+        }
+
+        .section-head h4 {
+            position: relative;
+            padding: 0;
+            color: var(--primary-color);
+            line-height: 1;
+            letter-spacing: 0.3px;
+            font-size: 34px;
+            font-weight: 700;
+            text-align: center;
+            text-transform: none;
+            margin-bottom: 30px;
+        }
+
+        .section-head h4::before {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        .section-head h4 span {
+            font-weight: 700;
+            padding-bottom: 5px;
+            color: #5f5f5f;
+        }
+
+        .section-head p {
+            color: #818181;
+            font-size: 16px;
+            line-height: 28px;
+            text-align: center;
+        }
+
+        .item {
+            background: #fff;
+            text-align: center;
+            padding: 30px 25px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.07);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 5px solid rgba(0, 0, 0, 0.07);
+            -webkit-transition: all 0.5s ease-in-out 0s;
+            transition: all 0.5s ease-in-out 0s;
+        }
+
+        .item:hover {
+            background: var(--primary-color);
+            box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+            -webkit-transition: all 0.5s ease 0s;
+            transition: all 0.5s ease 0s;
+        }
+
+        .item:hover .item,
+        .item:hover span.icon {
+            background: #fff;
+            border-radius: 10px;
+            -webkit-transition: all 0.5s ease 0s;
+            transition: all 0.5s ease 0s;
+        }
+
+        .item:hover h6,
+        .item:hover p {
+            color: #fff;
+            -webkit-transition: all 0.5s ease 0s;
+            transition: all 0.5s ease 0s;
+        }
+
+        .item .icon {
+            font-size: 40px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            width: 90px;
+            height: 90px;
+            line-height: 96px;
+            border-radius: 50px;
+            padding: 10px;
+        }
+
+        .item .icon img {
+            width: 40px;
+        }
+
+        .item .feature_box_col_one {
+            background: #fff;
+            color: var(--primary-color);
+        }
+
+        .item .feature_box_col_two {
+            background: #fff;
+            color: var(--primary-color);
+        }
+
+        .item .feature_box_col_three {
+            background: #fff;
+            color: var(--primary-color);
+        }
+
+        .item .feature_box_col_four {
+            background: #fff;
+            color: var(--primary-color);
+        }
+
+        .item .feature_box_col_five {
+            background: #fff;
+            color: var(--primary-color);
+        }
+
+        .item .feature_box_col_six {
+            background: #fff;
+            color: var(--primary-color);
+        }
+
+        .item p {
+            font-size: 15px;
+            line-height: 26px;
+        }
+
+        .item h6 {
+            margin-bottom: 20px;
+            color: #2f2f2f;
+        }
+
+        .card-img-top {
+            max-height: 200px;
+        }
+
+        .product .card {
+            min-height: 400px;
+            margin-bottom: 40px;
+            transition: ease-in-out 0.3s;
+        }
+
+        .product .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+        }
+
+        #icon {
+            cursor: pointer;
+        }
+
+
+        /* Courses section */
+
+        #courses {
+            min-height: 100vh;
+        }
+
+        /* post card */
+
+
+        :root {
+            --primary-color: #a517ba;
+            --primary-color2: #703a79;
+        }
+
+        .dark {
+            background: #110f16;
+        }
+
+
+        .light {
+            background: #f3f5f7;
+        }
+
+        a,
+        a:hover {
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .postcard {
+            flex-wrap: wrap;
+            display: flex;
+
+            box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+            border-radius: 10px;
+            margin: 0 0 2rem 0;
+            overflow: hidden;
+            position: relative;
+            color: #ffffff;
+        }
+
+        .dark {
+            background-color: #18151f;
+        }
+
+        .light {
+            background-color: #e1e5ea;
+        }
+
+        .t-dark {
+            color: #18151f;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        h1,
+        .h1 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .small {
+            font-size: 80%;
+        }
+
+        .postcard__title {
+            font-size: 1.75rem;
+        }
+
+        .postcard__img {
+            max-height: 180px;
+            width: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .postcard__img_link {
+            display: contents;
+        }
+
+        .postcard__bar {
+            width: 50px;
+            height: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #424242;
+            transition: width 0.2s ease;
+        }
+
+        .postcard__text {
+            padding: 1.5rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .postcard__preview-txt {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: justify;
+            height: 100%;
+        }
+
+        .postcard__tagbox {
+            display: flex;
+            flex-flow: row wrap;
+            font-size: 14px;
+            margin: 20px 0 0 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .tag__item {
+            display: inline-block;
+            background: rgba(83, 83, 83, 0.4);
+            border-radius: 3px;
+            padding: 2.5px 10px;
+            margin: 0 5px 5px 0;
+            cursor: default;
+            user-select: none;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/"><img src="assets/images/logo.png" alt="ISVR"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% block h_active %}{% endblock %}" href="/#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% block a_active %}{% endblock %}" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% block s_active %}{% endblock %}" href="/services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% block c_active %}{% endblock %}" href="/contact">Contact
+                            Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% block co_active %}{% endblock %}" href="/courses">Courses</a>
+                    </li>
+                </ul>
+                <i class="fa-solid fa-sun mx-4" id="icon"></i>
+            </div>
+        </nav>
+    </section>
+    {% block main %}
+    {% endblock main %}
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-box">
+                    <img src="assets/images/logo.png" alt="ISVR">
+                    <p>ISVR is a comprehensive method of delivering significant academic and vocational knowledge to
+                        students in the fields of science, computer programs, technology, research, and engineering.</p>
+                </div>
+                <div class="col-md-4 footer-box">
+                    <p><b class="text-uppercase">Contact Us</b></p>
+                    <p class="font-weight-light">
+                        <i class="fa-solid fa-location-dot"></i> ISVR Research Lab, RCE, Roorkee, Uttarakhand 247667
+                    </p>
+                    <p class="font-weight-light">
+                        <i class="fa-solid fa-location-dot"></i> ISVR, Jubilee Market, Laxmi Bazar, Dhenkanal 759001
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-phone"></i> +91 88820 54894 / +91 98610 55575
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-envelope"></i> <a href="mailto:info@isvr.org.in"
+                            class="text-light">info@isvr.org.in</a>
+                    </p>
+                </div>
+                <div class="col-md-4 footer-box">
+                    <p><b class="text-uppercase">Important Links</b></p>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/" class="text-light">Home</a>
+                        </li>
+                        <li>
+                            <a href="/#about" class="text-light">About Us</a>
+                        </li>
+                        <li>
+                            <a href="/#services" class="text-light">Services</a>
+                        </li>
+                        <li>
+                            <a href="https://isvr-cert.herokuapp.com/" class="text-light">Certificates</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3">&copy; 2022 Copyright:
+            <a href="/" class="text-light"> isvr.org.in</a>.
+            Designed by: <a href="https://www.linkedin.com/in/somen-samanta-6375a921a/">Somen</a>
+        </div>
+    </section>
+
+    <a class="gototop" href="/#"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        var icon = document.getElementById("icon");
+
+        icon.onclick = function () {
+            document.body.classList.toggle("dark-mode")
+        }
+
+    </script>
+</body>
+
+</html>

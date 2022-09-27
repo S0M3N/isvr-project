@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Certificate | {{std.student_name}}{% endblock %}
+{% block main %}
+<section>
+    <div class="container">
+        <div class="text-center my-5 col-md-10 mx-auto">
+            <h1 class="font-weight-bold display-6">Certificate <span class="text-primary-color">Info</span> Here</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 my-4">
+                <table class="table table-hover table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col"><b class="blockquote">Info Type</b></th>
+                            <th scope="col"><b class="blockquote">Information</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">Name</td>
+                            <td>{{std.student_name}}</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Course</td>
+                            <td>{{std.course}}</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Certificate Id</td>
+                            <td>{{std.cert_number}}</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Certified on</td>
+                            <td>{{std.cert_created}}</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Certificate Share and Verification link</td>
+                            <td><a href="http://127.0.0.1:8000/cert/{{std.slug}}">https://isvr.org.in/cert/{{std.slug}}</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 my-4">
+                <img class="image-100" src="https://drive.google.com/uc?export=view&id={{std.gdrive_id}}" alt="Cert Here">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

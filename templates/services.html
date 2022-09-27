@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% block title %}ISVR | Services{% endblock %}
+{% block s_active %}active{% endblock %}
+{% block main %}
+{% load static %}
+<section class="service">
+    <div class="pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="section-head col-sm-12">
+                    <h4><span>Our </span>Services</h4>
+                    <p>High Performance curriculum For Multiple Space Fields</p>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-rocket"></i></span>
+                        <h6 style="color: #000;">Rocketry</h6>
+                        <p style="color: #000;">This course covers the fundamentals of rockets as well as
+                            contemporary advancements in rocket propulsion,Solid, liquid,electrical,nuclear fuels
+                            and rockets.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-satellite"></i></span>
+                        <h6 style="color: #000;">Cube Satellite</h6>
+                        <p style="color: #000;">Take a look at a demo of our Satellite Designing course. Allow one
+                            of our knowledgeable mentors to lead you through the course.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="item"> <span class="icon feature_box_col_three"><img
+                                src="{% static '/images/ico/drone.png' %}"></img></span>
+                        <h6 style="color: #000;">Drone Technology</h6>
+                        <p style="color: #000;">Aerial photography and videography are two of the most common
+                            business applications and uses for UAV Drones, Experience them with ISVR.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="item"> <span class="icon feature_box_col_four"><i
+                                class="fa-solid fa-capsules"></i></span>
+                        <h6 style="color: #000;">Space Medicine</h6>
+                        <p style="color: #000;">Astronautical hygiene is the application of science and technology
+                            to astronauts in space, whereas space medicine is the practise of medicine on astronauts
+                            in space.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="item"> <span class="icon feature_box_col_five"><img
+                                src="{% static '/images/ico/telescope.png' %}"></img></span>
+                        <h6 style="color: #000;">Astronomy</h6>
+                        <p style="color: #000;">Astronomy is the study of everything beyond Earth's atmosphere in
+                            the cosmos. This includes objects visible with the naked eye, such as the Sun, Moon,
+                            planets, and stars.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="item"> <span class="icon feature_box_col_six"><i
+                                class="fa-solid fa-book"></i></span>
+                        <h6 style="color: #000;">Space Research</h6>
+                        <p style="color: #000;">A research internship, often known as a dissertation internship, is
+                            one in which you conduct research for a corporation,It is usually undertaken by students
+                            in their final year of academic study.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-4">
+        <div class="row product">
+            <div class="section-head col-sm-12">
+                <h4><span>Our </span>Products</h4>
+                <p>High Quality and <span class="text-primary-color">Affordable</span> Kits</p>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top" src="{% static '/images/rocketry.jpg' %}" alt="">
+                        <a href="#">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title text-dark">Rocketry</h4>
+                        <p class="text-dark">Model rocketry kit @ Rs. <s>21000</s>.</p>
+                        <h5 class="text-right text-dark">Rs. 16000</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top" src="{% static '/images/cube-set.png' %}" alt="">
+                        <a href="#">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title text-dark">Cube Satellite</h4>
+                        <p class="text-dark">Cube Satellite kit @ Rs. <s>26000</s> .</p>
+                        <h5 class="text-right text-dark">Rs. 21000</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top" src="{% static '/images/drone.jpg' %}" alt="">
+                        <a href="#">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title text-dark">Drone Kit</h4>
+                        <p class="text-dark">Drone complete kit with transmitter @ Rs. <s>21000</s>.</p>
+                        <h5 class="text-right text-dark">Rs. 16000</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container my-4">
+        <div class="text-center mb-5 col-md-10 mx-auto">
+            <h1 class="font-weight-bold display-6">Request a <span class="text-primary-color">Callback</span> from
+                us.</h1>
+            <a href="/contact"
+                class="btn my-4 px-4 py-2 rounded-pill text-white bg-primary-color">Contact Us.</a>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 my-4">
+                <img class="image-100" src="{% static '/images/service.jpg' %}" alt="">
+            </div>
+            <div class="col-md-6 my-4">
+                <h4 class="text-primary-color"><i class="fa-solid fa-fire"></i> Research & Analysis</h4>
+                <p class="ml-5 my-4">ISVR has a long history in the field of research, with its student innovation
+                    and
+                    research lab, and has assisted more than 50 students with research.</p>
+                <h4 class="text-primary-color"><i class="fa-solid fa-gears"></i> The Best Industry Services </h4>
+                <p class="ml-5 my-4">The ISVR curriculum was created with the guidance of industry experts from
+                    around
+                    the world, and it features a wide range of topics and real-world examples.</p>
+                <h4 class="text-primary-color"><i class="fa-solid fa-graduation-cap"></i> Learning Methodology</h4>
+                <p class="ml-5 my-4">We prioritise studying the theory first, then moving on to practical learning
+                    on
+                    simulation systems, and finally, live field experience.</p>
+            </div>
+        </div>
+</section>
+{% endblock %}

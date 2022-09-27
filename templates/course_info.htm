@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}ISVR | {{std.course}}{% endblock %}
+{% block co_active %}active{% endblock %}
+{% block main %}
+{% load static %}
+
+<div class="container my-4">
+    <div class="blog-post mb-3">
+        <h1 class="blog-post-title">{{std.course}}</h1>
+        <div class="row">
+            <div class="col-md-6 my-4">
+                <img class="image-100" src="{{std.git_img}}" alt="{{std.course}}">
+            </div>
+            <div class="col-md-6 my-4">
+                {{std.course_cont}}
+            </div>
+        </div>
+        <h1 class="blog-post-title">{{std.course_heading_01}}</h1>
+        <p class="mx-4">{{std.course_desc_01}}</p>
+        <h3>{{std.course_heading_02}}</h2>
+        <p class="mx-4">{{std.course_desc_02}}</p>
+    </div>
+</div>
+<div class="container my-4">
+    <div class="card-deck mb-3 text-dark text-center">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">1 Month</h4>
+            </div>
+            <div class="card-body">
+                <p class="text-center"><s>Rs. {{std.fee_1_not}}</s></p>
+                <h1 class="card-title pricing-card-title">{{std.course_fee_01}}</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Certificate of completion</li>
+                    <li>Work on one Hands-on-projects</li>
+                    <li>Learn from our experts</li>
+                    <li>24X7 Help</li>
+                </ul>
+                <a href="/courses/apply/" class="btn my-5 px-4 py-2 rounded-pill text-white bg-primary-color">Apply Now</a>
+            </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">3 Months</h4>
+            </div>
+            <div class="card-body">
+                <p class="text-center"><s>Rs. {{std.fee_3_not}}</s></p>
+                <h1 class="card-title pricing-card-title">{{std.course_fee_03}}</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Certificate of completion</li>
+                    <li>Work on one Hands-on-projects</li>
+                    <li>Learn from our experts</li>
+                    <li>24X7 Help</li>
+                    <li>Work on major projects*</li>
+                </ul>
+                <a href="/courses/apply/" class="btn my-3 px-4 py-2 rounded-pill text-white bg-primary-color">Apply Now</a>
+            </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">6 Months</h4>
+            </div>
+            <div class="card-body">
+                <p class="text-center"><s>Rs. {{std.fee_6_not}}</s></p>
+                <h1 class="card-title pricing-card-title">{{std.course_fee_06}}</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Certificate of completion</li>
+                    <li>Work on one Hands-on-projects</li>
+                    <li>Learn from our experts</li>
+                    <li>24X7 Help</li>
+                    <li>Work with expert's projects*</li>
+                </ul>
+                <a href="/courses/apply/" class="btn my-3 px-4 py-2 rounded-pill text-white bg-primary-color">Apply Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

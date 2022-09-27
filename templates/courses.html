@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% block title %}ISVR | Course{% endblock %}
+{% block co_active %}active{% endblock %}
+{% block main %}
+{% load static %}
+
+<style>
+    .card {
+        color: #111;
+        min-height: 555px;
+        margin-bottom: 10px;
+        transition: 0.3s ease-in-out transform;
+    }
+</style>
+
+<section id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="promo-title">Grow your skills in space Technology.</p>
+                <p>One of the most important areas we can develop as professionals is competence in accessing and
+                    sharing knowledge.</p>
+                <a href="#courses" class="btn my-4 px-4 py-2 rounded-pill text-white bg-primary-color">View our
+                    Courses</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="https://raw.githubusercontent.com/S0M3N/isvr-app/master/assets/bannerimg.png"
+                    class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="courses">
+    <div class="container my-5">
+        <div class="text-center mb-5 col-md-10 mx-auto">
+            <h1 class="font-weight-bold display-6">Courses <span class="text-primary-color">We</span> Offer</h2>
+        </div>
+        <h4 class="text-center mb-4"><span class="text-primary-color">Most Popular</span> Course</h4>
+        <article class="postcard dark blue">
+            <a class="postcard__img_link" href="/courses/model-rocketry/">
+                <img class="postcard__img"
+                    src="https://github.com/S0M3N/isvr-cert-verify/blob/master/static/image/banner-alt.jpg?raw=true"
+                    alt="Image Title" />
+            </a>
+            <div class="postcard__text">
+                <h1 class="postcard__title blue"><a href="/courses/model-rocketry/">Model Rocketry. Fundamentals of rockets</a></h1>
+                <div class="postcard__subtitle small">
+                    <time>
+                        <i class="fa-solid fa-clock"></i> 3 time period options
+                    </time>
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">This course covers the fundamentals of rockets as well
+                    as contemporary advancements in rocket propulsion, solid, liquid, electrical,
+                    nuclear fuels and rockets</div>
+                <hr>
+                <p class="card-text mt-4">Start course @ <s>₹-14999</s></p>
+                <h3 class="text-right">Rs. 11999/-</h3>
+                <p class="text-right"><a href="#">More options</a></p>
+            </div>
+        </article>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://raw.githubusercontent.com/S0M3N/isvr-cert-verify/master/static/image/spacemed.png"
+                        alt="Rocketry Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Space Medicine. Learn the medicine used in space.</h5>
+                        <p class="card-text mt-4"><i class="fa-solid fa-clock"></i> 3 time period options</p>
+                        <a href="/courses/space-medicine/" class="btn bg-primary-color text-light">Learn More</a>
+                        <hr>
+                        <p class="card-text mt-4">Start course @ <s>₹-24999</s></p>
+                        <h3 class="text-right">Rs. 19999/-</h3>
+                        <p class="text-right"><a href="/courses/space-medicine/">More options</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://raw.githubusercontent.com/S0M3N/isvr-cert-verify/master/static/image/CubeSat.webp"
+                        alt="CubeSet Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Cube Satellite. Take a look on Satellite Designing.</h5>
+                        <p class="card-text mt-4"><i class="fa-solid fa-clock"></i> 3 time period options</p>
+                        <a href="/courses/cube-satellite-communication/" class="btn bg-primary-color text-light">Learn More</a>
+                        <hr>
+                        <p class="card-text mt-4">Start course @ <s>₹-14999</s></p>
+                        <h3 class="text-right">Rs. 11999/-</h3>
+                        <p class="text-right"><a href="/courses/cube-satellite-communication/">More options</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://github.com/S0M3N/isvr-cert-verify/blob/master/static/image/drone.jpg?raw=true"
+                        alt="Drone Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Drone Technology. Learn the fundamentals of Drone.</h5>
+                        <p class="card-text mt-4"><i class="fa-solid fa-clock"></i> 3 time period options</p>
+                        <a href="/courses/drone-technology/" class="btn bg-primary-color text-light">Learn More</a>
+                        <hr>
+                        <p class="card-text mt-4">Start course @ <s>₹-14999</s></p>
+                        <h3 class="text-right">Rs. 11999/-</h3>
+                        <p class="text-right"><a href="/courses/drone-technology/">More options</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="text-center mb-5 col-md-10 mx-auto">
+            <h1 class="font-weight-bold display-6">Check <span class="text-primary-color">For</span> Certificates</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 my-4">
+                <h3 class="font-weight-600 display-6 text-center">Check Certificate <span
+                        class="text-primary-color">using their </span> certificate ID.
+                </h3>
+                <p class="my-3 mx-3">Find the certificate id from the certificate and enter here. If the certificate is
+                    valid then you will be able to find the certifiacte information here</p>
+            </div>
+            <div class="col-md-6 my-4">
+                <div class="input-group mt-4">
+                    <form class="form-inline" action="/search" method="GET">
+                        <input type="text" class="form-control input-text" placeholder="Search Certificate...."
+                            name="cert_id" id="cert_id">
+                        <div class="input-group-append">
+                            <button class="btn bg-primary-color text-light my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
