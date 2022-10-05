@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'isvr.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'd720ajjbmg718a',
-       'USER': 'marypccdqutpog',
-       'PASSWORD': '802654606df2d0b5698b48ea93a3c9ea8a5d68c184a9d730b9d9e26b05d1b962',
-       'HOST': 'ec2-34-194-40-194.compute-1.amazonaws.com',
+       'NAME': 'd<dbname>',
+       'USER': '<db user>',
+       'PASSWORD': '<db_pass>',
+       'HOST': '<db_host>',
        'PORT': '5432',
    }
 }
