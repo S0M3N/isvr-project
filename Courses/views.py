@@ -27,4 +27,4 @@ def apply(request):
                 messages.success(request, 'Form filled successfully we will be with you soon.')
         except:
             messages.error(request, "Cannot apply right now, please check all fields or please try again later.")
-    return render(request, 'course/course_apply.html')
+    return render(request, 'course_apply.html')
